@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link, Route } from 'react-router-dom'
 import './App.css';
-
+import Board from './components/Board';
+import OtherPage from './components/OtherPage';
+import OtherPage2 from './components/OtherPage2';
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <h1>
+      <Link to ="/Board">Board</Link><br/>
+      <Link to ="/OtherPage">OtherPage</Link> <br/>
+      <Link to ="/OtherPage2">OtherPage2</Link>
+
+      </h1>
+
+      <Route path="/Board">
+        <Board />
+      </Route>
+      <Route path="/OtherPage2">
+        <OtherPage2 />
+      </Route>
+
+      <Route path="/OtherPage">
+        <OtherPage />
+      </Route>
+
+    </>
   );
 }
 
