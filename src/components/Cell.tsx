@@ -1,5 +1,4 @@
 import './Cell.css'
-import Button from '../UI/Button';
 
 class CellBox {
     xValue: number;

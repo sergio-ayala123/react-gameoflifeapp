@@ -4,7 +4,9 @@ import { CellBox } from "./Cell";
 import Button from '../UI/Button';
 
 
-let matrix: CellBox[][] = new Array;
+let matrix: CellBox[][];
+matrix = []
+
 for (let i = 0; i < 30; i++) {
     matrix[i] = []
     for (let j = 0; j < 30; j++) {
