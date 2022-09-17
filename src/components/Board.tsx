@@ -4,7 +4,7 @@ import { CellBox } from "./Cell";
 import Button from '../UI/Button';
 
 
-let matrix: CellBox[][] = new Array();
+let matrix: CellBox[][] = new Array;
 for (let i = 0; i < 30; i++) {
     matrix[i] = []
     for (let j = 0; j < 30; j++) {
@@ -41,7 +41,6 @@ const Board = () => {
 
 
             let count: number = 0
-            const map = new Map()
             for (let j = 0; j < 30; j++) {
                 for (let k = 0; k < 30; k++) {
                     for (let l = -1; l <= 1; l++) {
@@ -88,24 +87,11 @@ const Board = () => {
         }, 300)
     }
 
-
-
-    //var i = 1;                  //  set your counter to 1
-    function example() {         //  create a loop function
-        setTimeout(function () {   //  call a 3s setTimeout when the loop is called
-            console.log('hello');   //  your code here
-            i++;                    //  increment the counter
-            if (i < 10) {           //  if the counter < 10, call the loop function
-                myLoop();             //  ..  again which will trigger another 
-            }                       //  ..  setTimeout()
-        }, 3000)
-    }
-
     return (
         <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(30, 40px)', gridTemplateRows: 'repeat(30,40px)', justifyContent: 'center' }}>
                 {
-                    updatedMatrix.map((i, index) => i.map((j, indexJ) => <Cell row={index} col={indexJ} status={updatedMatrix[index][indexJ].isAlive} makeAlive={setAlive} />))
+                    updatedMatrix.map((i, index) => i.map((j, indexJ) => <Cell key = {index + indexJ} row={index} col={indexJ} status={updatedMatrix[index][indexJ].isAlive} makeAlive={setAlive} />))
                 }
             </div>
 
