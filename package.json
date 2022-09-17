@@ -1,6 +1,6 @@
 {
   "name": "gameoflife",
-  "homepage":"https://sergio-ayala123.github.io/gameoflifeapp",
+  "homepage":"https://sergio-ayala123.github.io/react-gameoflifeapp/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
