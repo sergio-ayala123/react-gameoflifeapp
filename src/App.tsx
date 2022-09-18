@@ -1,10 +1,10 @@
-import { AppBar, Button, Toolbar} from '@mui/material';
+import { AppBar, Button, Toolbar, Typography} from '@mui/material';
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import './App.css';
 import Board from './components/Board';
 import OtherPage from './components/OtherPage';
-import OtherPage2 from './components/OtherPage2';
+import OtherPage2 from './components/AnotherPage';
 function App() {
 
 
@@ -16,16 +16,23 @@ function App() {
         <Toolbar style = {{display:'flex', justifyContent:'center'}}>
           <Button>
 
-            <Link to="/Board" style={{ color: 'white' }}>Board</Link><br />
+            <Link to="/Board" style={{ color: 'white' }}>
+            <Typography variant='h5'> Game Of Life</Typography>
+              </Link>
 
           </Button>
           <Button style={{ color: 'white' }}>
-            <Link to="/OtherPage" style={{ color: 'white' }}>OtherPage</Link> <br />
+            <Link to="/OtherPage" style={{ color: 'white' }}>
+            <Typography variant='h5'> Other Page</Typography>
+              </Link> <br />
 
           </Button>
 
           <Button style={{ color: 'white' }}>
-            <Link to="/OtherPage2" style={{ color: 'white' }}>OtherPage2</Link>
+            <Link to="/OtherPage2" style={{ color: 'white' }}>
+            <Typography variant='h5'> Another Page</Typography>
+
+              </Link>
 
           </Button>
         </Toolbar>
