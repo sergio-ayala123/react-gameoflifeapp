@@ -2,9 +2,6 @@ import { useState } from "react";
 import Cell from "./Cell"
 import { CellBox } from "./Cell";
 import Button from '../UI/Button';
-import { lookup, TIMEOUT } from "dns";
-import { clear } from "console";
-import { exit } from "process";
 
 
 let matrix: CellBox[][];
@@ -36,11 +33,7 @@ const Board = () => {
 
     }
 
-    
-    const stopLoop = () => {
-        setStop(!stop)
-    }
-
+ 
     var i = 1;
 
     const start = () => {
@@ -92,13 +85,9 @@ const Board = () => {
 
             i++;
             if (i < 1000) {
-                console.log('stop is: ', stop)
-                if(stop == false){
-                    return
-                }
-                else{
+                
                     start()
-                }
+                
             }
         }, 300)
         
