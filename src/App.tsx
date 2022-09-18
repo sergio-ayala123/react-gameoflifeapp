@@ -1,4 +1,4 @@
-import { AppBar, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, Toolbar} from '@mui/material';
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import './App.css';

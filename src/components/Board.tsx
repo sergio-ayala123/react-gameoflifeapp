@@ -33,12 +33,12 @@ const Board = () => {
 
     }
 
- 
+
     var i = 1;
 
-    const start = () => {
-        setStop(false)
-         const timer: ReturnType<typeof setTimeout> = setTimeout(function () {
+
+    function myLoop() {
+        setTimeout(function () {
             let newarr = [...matrix]
 
             let aliveCells: Array<[number, number]> = []
@@ -85,12 +85,12 @@ const Board = () => {
 
             i++;
             if (i < 1000) {
-                
-                    start()
-                
+
+                myLoop()
+
             }
         }, 300)
-        
+
 
     }
     return (
@@ -102,7 +102,7 @@ const Board = () => {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center' }} hidden={true}>
-                {stop ? <Button  onClick={start}>Start</Button> : <h1>Started</h1>}
+                {stop ? <Button onClick={myLoop}>Start</Button> : <h1>Started</h1>}
             </div>
 
         </>
