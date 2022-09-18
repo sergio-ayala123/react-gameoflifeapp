@@ -1,3 +1,4 @@
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import './App.css';
@@ -11,14 +12,26 @@ function App() {
 
   return (
     <>
+      <AppBar position='static'>
+        <Toolbar style = {{display:'flex', justifyContent:'center'}}>
+          <Button>
 
-      <h1>
-      <Link to ="/Board">Board</Link><br/>
-      <Link to ="/OtherPage">OtherPage</Link> <br/>
-      <Link to ="/OtherPage2">OtherPage2</Link>
+            <Link to="/Board" style={{ color: 'white' }}>Board</Link><br />
 
-      </h1>
+          </Button>
+          <Button style={{ color: 'white' }}>
+            <Link to="/OtherPage" style={{ color: 'white' }}>OtherPage</Link> <br />
 
+          </Button>
+
+          <Button style={{ color: 'white' }}>
+            <Link to="/OtherPage2" style={{ color: 'white' }}>OtherPage2</Link>
+
+          </Button>
+        </Toolbar>
+      </AppBar>
+
+    <br/>
       <Route path="/Board">
         <Board />
       </Route>

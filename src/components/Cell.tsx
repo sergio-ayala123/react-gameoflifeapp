@@ -1,5 +1,5 @@
 import './Cell.css'
-
+import Button from '@mui/material'
 class CellBox {
     xValue: number;
     yValue: number;
@@ -15,8 +15,6 @@ class CellBox {
 const Cell: React.FC<{ row: number, col: number, status: boolean; makeAlive:(x:number, y:number)=> void}> = (props) => {
 
     const setAlive = () => {
-
-        //console.log('this status is: ', props.status)
         props.makeAlive(props.row, props.col)
     }  
       
@@ -31,9 +29,3 @@ const Cell: React.FC<{ row: number, col: number, status: boolean; makeAlive:(x:n
 export { CellBox }
 export default Cell
 
-//{props.status == false ? (
-  //  <button onClick={setAlive} ></button>
-//) : (
-  //  <button style = {{backgroundColor:'red'}} onClick={setAlive}></button>
-
-//)}

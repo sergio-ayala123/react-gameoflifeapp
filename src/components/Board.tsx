@@ -2,6 +2,9 @@ import { useState } from "react";
 import Cell from "./Cell"
 import { CellBox } from "./Cell";
 import Button from '../UI/Button';
+import { lookup, TIMEOUT } from "dns";
+import { clear } from "console";
+import { exit } from "process";
 
 
 let matrix: CellBox[][];
@@ -19,6 +22,7 @@ for (let i = 0; i < 30; i++) {
 const Board = () => {
 
     const [updatedMatrix, setMatrix] = useState<CellBox[][]>(matrix);
+    const [stop, setStop] = useState(true);
 
     const setAlive = (x: number, y: number) => {
         console.log('isAlive before click: ', updatedMatrix[x][y].isAlive)
@@ -32,11 +36,16 @@ const Board = () => {
 
     }
 
-
+    
+    const stopLoop = () => {
+        setStop(!stop)
+    }
 
     var i = 1;
-    function myLoop() {
-        setTimeout(function () {
+
+    const start = () => {
+        setStop(false)
+         const timer: ReturnType<typeof setTimeout> = setTimeout(function () {
             let newarr = [...matrix]
 
             let aliveCells: Array<[number, number]> = []
@@ -58,7 +67,6 @@ const Board = () => {
                             }
                         }
                     }
-
                     if ((count === 2 || count === 3) && newarr[j][k].isAlive === true) {
                         aliveCells = [[j, k], ...aliveCells]
                     }
@@ -79,26 +87,33 @@ const Board = () => {
 
                 newarr[aliveCells[i][0]][aliveCells[i][1]].isAlive = true;
             }
-            
+
             setMatrix(newarr)
 
             i++;
             if (i < 1000) {
-                myLoop();
+                console.log('stop is: ', stop)
+                if(stop == false){
+                    return
+                }
+                else{
+                    start()
+                }
             }
         }, 300)
-    }
+        
 
+    }
     return (
         <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(30, 40px)', gridTemplateRows: 'repeat(30,40px)', justifyContent: 'center' }}>
                 {
-                    updatedMatrix.map((i, index) => i.map((j, indexJ) => <Cell key = {index + indexJ} row={index} col={indexJ} status={updatedMatrix[index][indexJ].isAlive} makeAlive={setAlive} />))
+                    updatedMatrix.map((i, index) => i.map((j, indexJ) => <Cell key={index + indexJ} row={index} col={indexJ} status={updatedMatrix[index][indexJ].isAlive} makeAlive={setAlive} />))
                 }
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button onClick={myLoop}>Start</Button>
+            <div style={{ display: 'flex', justifyContent: 'center' }} hidden={true}>
+                {stop ? <Button  onClick={start}>Start</Button> : <h1>Started</h1>}
             </div>
 
         </>
