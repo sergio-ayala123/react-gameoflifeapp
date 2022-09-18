@@ -31,6 +31,7 @@ function App() {
         </Toolbar>
       </AppBar>
 
+
     <br/>
       <Route path="/Board">
         <Board />

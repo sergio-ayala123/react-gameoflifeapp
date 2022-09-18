@@ -38,7 +38,9 @@ const Board = () => {
 
 
     function myLoop() {
+        setStop(!stop)
         setTimeout(function () {
+            
             let newarr = [...matrix]
 
             let aliveCells: Array<[number, number]> = []
@@ -95,6 +97,8 @@ const Board = () => {
     }
     return (
         <>
+            <h1 className='test'>Game Of Life</h1>
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(30, 40px)', gridTemplateRows: 'repeat(30,40px)', justifyContent: 'center' }}>
                 {
                     updatedMatrix.map((i, index) => i.map((j, indexJ) => <Cell key={index + indexJ} row={index} col={indexJ} status={updatedMatrix[index][indexJ].isAlive} makeAlive={setAlive} />))
