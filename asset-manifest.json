@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-gameoflifeapp/static/css/main.0ff2b99e.css",
+    "main.js": "/react-gameoflifeapp/static/js/main.a0a6e506.js",
+    "static/js/787.3cefafa3.chunk.js": "/react-gameoflifeapp/static/js/787.3cefafa3.chunk.js",
+    "index.html": "/react-gameoflifeapp/index.html",
+    "main.0ff2b99e.css.map": "/react-gameoflifeapp/static/css/main.0ff2b99e.css.map",
+    "main.a0a6e506.js.map": "/react-gameoflifeapp/static/js/main.a0a6e506.js.map",
+    "787.3cefafa3.chunk.js.map": "/react-gameoflifeapp/static/js/787.3cefafa3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ff2b99e.css",
+    "static/js/main.a0a6e506.js"
+  ]
+}
